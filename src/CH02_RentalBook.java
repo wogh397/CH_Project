@@ -13,13 +13,14 @@ public class CH02_RentalBook {
     boolean searchBook() {
         System.out.println("찾으시는 도서 정보 종류를 입력해주세요");
         System.out.println("대여를 그만하시려면 exit를 입력하세요");
+        System.out.println("[id, title, author, category, publishDate]");
         String searchType = input.nextLine();
+
         if (searchType.equals("exit")) {
             System.out.println("감사합니다. 안녕히 가세요!");
             return false;
         }
-        System.out.print("검색어를 입력해주세요 : ");
-        System.out.println("[id, title, author, category, publishDate]");
+        System.out.print("도서 정보에서 키워드를 입력해주세요 : ");
         String keyword = input.nextLine().toUpperCase();
         boolean found = false; //switch case로 keyword를 찾아서 없으면 조건에 안맞고 다시돌림
         switch (searchType.toLowerCase()) {
@@ -76,6 +77,7 @@ public class CH02_RentalBook {
         if (!found) {
             System.out.println("조건의 맞는 도서가 없습니다.");
         }
+        rentalBook();
         return true;
     }
 
