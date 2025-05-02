@@ -1,3 +1,4 @@
+
 import java.util.Scanner;
 
 public class MarketManager {
@@ -7,6 +8,7 @@ public class MarketManager {
         userSelect();
 
     }
+
 
     void userSelect() {
         while (true) {
@@ -53,6 +55,7 @@ public class MarketManager {
         int choice  = sc.nextInt();
         switch (choice){
             case 1:
+                findBook();
                 System.out.println("책 이름으로 검색");
                 break;
             case 2:
@@ -74,5 +77,22 @@ public class MarketManager {
     }
     void payment(){
         System.out.println("결제하기");
+    }
+
+
+
+    BookCart[] books=new BookCart[3];
+    public MarketManager(){
+        books[0]=new BookCart("1","글쓴이1","문학",1000);
+        books[1]=new BookCart("2","글쓴이2","경제",2000);
+        books[2]=new BookCart("3","글쓴이3","사회",3000);
+    }
+
+    public void findBook() {
+        System.out.println("검색할 책이름을 입력해주세요");
+        String bookname= sc.nextLine();
+        for(int i=0;i<3;i++){
+            
+        }
     }
 }
